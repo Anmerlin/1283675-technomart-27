@@ -10,12 +10,12 @@
   <header>
     <ul>
       <li><a href="/"><img src="img/logo.svg" width="109" height="19" alt="Техномарт"></a></li>
-      <li>Поиск:</li>
+      <li>
+        <form><label><input type="search" name="q" placeholder="Поиск:"></label></form>
+      </li>
       <li><a href="">Закладки: <span>0</span></a></li>
       <li><a href="">Корзина: <span>0</span></a></li>
-      <li>
-        <a href="">Оформить заказ</a>
-      </li>
+      <li><a href="">Оформить заказ</a></li>
     </ul>
     <div>
       <p>Интернет-магазин строительных материалов и инструментов для ремонта</p>
@@ -54,11 +54,8 @@
     <section>
       <h2>Фильтр:</h2>
       <form>
-        <!-- TODO  -->
-        <!-- fieldset, legend, ul, li -->
-        <!-- Содержимое фильтра -->
-        <div>
-          <h3>Цена:</h3>
+        <fieldset>
+          <legend>Цена:</legend>
           <div>
             <!-- управление -->
             <div>
@@ -73,27 +70,45 @@
             <span>-</span>
             <input type="number" min="0" max="30000" step="500" value="30000">
           </div>
-        </div>
-        <div>
-          <h3>Производители:</h3>
-          <input type="checkbox" name="manufacturers" id="bosh" checked>
-          <label for="bosh">Bosh</label>
-          <input type="checkbox" name="manufacturers" id="interskol">
-          <label for="interskol">Интерскол</label>
-          <input type="checkbox" name="manufacturers" id="makita" checked>
-          <label for="makita">Makita</label>
-          <input type="checkbox" name="manufacturers" id="dewalt">
-          <label for="dewalt">Dewalt</label>
-          <input type="checkbox" name="manufacturers" id="hitachi">
-          <label for="hitachi">Hitachi</label>
-        </div>
-        <div>
-          <h3>Питание</h3>
-          <input type="radio" name="power" id="accumulator">
-          <label for="accumulator">Аккамуляторные</label>
-          <input type="radio" name="power" id="mains">
-          <label for="mains">Сетевые</label>
-        </div>
+        </fieldset>
+        <fieldset>
+          <legend>Производители:</legend>
+          <ul>
+            <li>
+              <input type="checkbox" name="manufacturers" id="bosh" class="visually-hidden" checked>
+              <label for="bosh">Bosh</label>
+            </li>
+            <li>
+              <input type="checkbox" name="manufacturers" id="interskol" class="visually-hidden">
+              <label for="interskol">Интерскол</label>
+            </li>
+            <li>
+              <input type="checkbox" name="manufacturers" id="makita" class="visually-hidden" checked>
+              <label for="makita">Makita</label>
+            </li>
+            <li>
+              <input type="checkbox" name="manufacturers" id="dewalt" class="visually-hidden">
+              <label for="dewalt">Dewalt</label>
+            </li>
+            <li>
+              <input type="checkbox" name="manufacturers" id="hitachi" class="visually-hidden">
+              <label for="hitachi">Hitachi</label>
+            </li>
+          </ul>
+        </fieldset>
+        <fieldset>
+          <legend>Питание</legend>
+          <ul>
+            <li>
+              <input type="radio" name="power" id="accumulator" class="visually-hidden">
+              <label for="accumulator">Аккамуляторные</label>
+            </li>
+            <li>
+              <input type="radio" name="power" id="mains" class="visually-hidden">
+              <label for="mains">Сетевые</label>
+            </li>
+          </ul>
+        </fieldset>
         <button type="submit">Показать</button>
       </form>
     </section>
@@ -275,6 +290,15 @@
       </p>
     </div>
   </footer>
+  <section>
+    <h2 class="visually-hidden">Добавление товара в корзину</h2>
+    <p>Товар добавлен в корзину!</p>
+    <div>
+      <a href="">Оформить заказ</a>
+      <button type="button">Продолжить покупки</button>
+    </div>
+    <button type="button">Закрыть</button>
+  </section>
 
 </body>
 

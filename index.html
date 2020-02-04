@@ -10,12 +10,12 @@
   <header>
     <ul>
       <li><a><img src="img/logo.svg" width="109" height="19" alt="Техномарт"></a></li>
-      <li>Поиск:</li>
+      <li>
+        <form><label><input type="search" name="q" placeholder="Поиск:"></label></form>
+      </li>
       <li><a href="">Закладки: <span>0</span></a></li>
       <li><a href="">Корзина: <span>0</span></a></li>
-      <li>
-        <a href="">Оформить заказ</a>
-      </li>
+      <li><a href="">Оформить заказ</a></li>
     </ul>
     <div>
       <p>Интернет-магазин строительных материалов и инструментов для ремонта</p>
@@ -41,7 +41,6 @@
     </nav>
   </header>
   <main>
-    <!-- Основной контент -->
     <div>
       <div>
         <!-- Здесь и далее предполагаю, что иконки тизеров будут бэкграундом -->
@@ -133,7 +132,7 @@
         </li>
         <li>
           <div>new</div>
-          <img src="perforator3.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 2000">
+          <img src="img/perforator3.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 2000">
           <div>
             <button type="button">Купить</button>
             <button type="button">В закладки</button>
@@ -259,6 +258,30 @@
       </p>
     </div>
   </footer>
+  <section>
+    <h2 class="visually-hidden">Местоположение офиса</h2>
+    <img src="img/map-modal.jpg" width="940" height="446" alt="Местоположение офиса">
+    <button type="button">Закрыть</button>
+  </section>
+  <section>
+    <h2 class="visually-hidden">Напишите нам</h2>
+    <form>
+      <div>
+        <label for="name">Ваше имя:</label>
+        <input type="text" name="name" id="name" placeholder="Имя Фамилия">
+      </div>
+      <div>
+        <label for="email">Ваш e-mail:</label>
+        <input type="email" name="email" id="email" placeholder="email@examlpe.com">
+      </div>
+      <div>
+        <label for="text">Текст письма:</label>
+        <textarea name="text" id="text" placeholder="В свободной форме"></textarea>
+      </div>
+      <button type="submit">Отправить</button>
+    </form>
+    <button type="button">Закрыть</button>
+  </section>
 
 </body>
 
