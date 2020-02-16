@@ -1,7 +1,8 @@
+/* Fonts */
 @font-face {
   font-family: "PTSans";
-  src: url("../fonts/ptsans.woff2") format("woff2"),
-    url("../fonts/ptsans.woff") format("woff");
+  src: url("/fonts/ptsans.woff2") format("woff2"),
+    url("/fonts/ptsans.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -9,8 +10,8 @@
 
 @font-face {
   font-family: "PTSans";
-  src: url("../fonts/ptsansbold.woff2") format("woff2"),
-    url("../fonts/ptsansbold.woff") format("woff");
+  src: url("/fonts/ptsansbold.woff2") format("woff2"),
+    url("/fonts/ptsansbold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -18,8 +19,8 @@
 
 @font-face {
   font-family: "Cuprum";
-  src: url("../fonts/cuprum.woff2") format("woff2"),
-    url("../fonts/cuprum.woff") format("woff");
+  src: url("/fonts/cuprum.woff2") format("woff2"),
+    url("/fonts/cuprum.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -27,8 +28,8 @@
 
 @font-face {
   font-family: "Cuprum";
-  src: url("../fonts/cuprumbold.woff2") format("woff2"),
-    url("../fonts/cuprumbold.woff") format("woff");
+  src: url("/fonts/cuprumbold.woff2") format("woff2"),
+    url("/fonts/cuprumbold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -36,8 +37,8 @@
 
 @font-face {
   font-family: "Cuprum";
-  src: url("../fonts/cuprumitalic.woff2") format("woff2"),
-    url("../fonts/cuprumitalic.woff") format("woff");
+  src: url("/fonts/cuprumitalic.woff2") format("woff2"),
+    url("/fonts/cuprumitalic.woff") format("woff");
   font-weight: normal;
   font-style: italic;
   font-display: swap;
@@ -45,13 +46,14 @@
 
 @font-face {
   font-family: "Cuprum";
-  src: url("../fonts/cuprumbolditalic.woff2") format("woff2"),
-    url("../fonts/cuprumbolditalic.woff") format("woff");
+  src: url("/fonts/cuprumbolditalic.woff2") format("woff2"),
+    url("/fonts/cuprumbolditalic.woff") format("woff");
   font-weight: bold;
   font-style: italic;
   font-display: swap;
 }
 
+/* Basic style */
 html {
   box-sizing: border-box;
 }
@@ -66,9 +68,10 @@ body {
   margin: 0;
   padding: 0;
 
-  font-family: "PTSans", sans-serif;
   font-size: 14px;
   line-height: 1;
+  font-weight: 400;
+  font-family: "PTSans", sans-serif;
 }
 
 a {
@@ -79,4 +82,256 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+.icon {}
+
+.icon::before {
+  content: "";
+
+  display: inline-block;
+  width: 49px;
+  height: 42px;
+
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  opacity: 0.3;
+}
+
+.icon-bookmark::before {
+  background-image: url(../img/icon-bookmark.svg);
+}
+
+.icon-basket::before {
+  background-image: url(../img/icon-basket.svg);
+}
+
+.button {}
+
+.button .checkout {}
+
+/* Grid */
+.container {
+  width: 100%;
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+
+/* Header */
+.header-wrapper {
+  padding-bottom: 60px;
+
+  background-color: #f4f7f9;
+}
+
+.header-menu-wrapper {
+  background-color: #293449;
+}
+
+.header-menu {
+  display: flex;
+  padding-left: 0;
+  margin-bottom: 0;
+
+  font-size: 17px;
+  line-height: 1.06;
+  font-family: "Cuprum", sans-serif;
+
+  list-style: none;
+}
+
+.header-menu li {
+  display: inline-flex;
+}
+
+.logo {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+
+  background-color: #ee3643;
+}
+
+.logo::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+
+  width: 100%;
+  height: 5px;
+
+  background-color: #ee3643;
+  box-shadow: inset 0px -5px 0 0 rgba(0, 0, 0, 0.24);
+}
+
+.logo[href]:hover {
+  background-color: #ca2c37;
+}
+
+.logo[href]:active {
+  background-color: #ba2732;
+}
+
+.header-logo {
+  height: 42px;
+}
+
+.header-search-form {
+  position: relative;
+}
+
+.search-field {
+  width: 270px;
+  height: 42px;
+  padding-left: 49px;
+
+  color: #ffffff;
+
+  background-color: #293449;
+  border: 0;
+}
+
+.search-field::placeholder {
+  color: #ffffff;
+}
+
+.search-field:hover {
+  background-color: #212a3a;
+}
+
+.search-field:hover+.icon-search,
+.search-field:focus+.icon-search {
+  opacity: 1;
+}
+
+.search-field:focus {
+  color: #000000;
+
+  background-color: #ffffff;
+}
+
+.search-field:focus+.icon-search path {
+  fill: #ee3643;
+}
+
+.header-search-form .icon-search {
+  position: absolute;
+  left: 0;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 49px;
+  height: 42px;
+
+  opacity: 0.3;
+}
+
+.header-menu-link,
+.checkout {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  min-height: 42px;
+
+  color: #ffffff;
+}
+
+.header-menu-link:hover {
+  background-color: #212a3a;
+}
+
+.header-menu-link:hover.icon::before {
+  opacity: 1;
+}
+
+.header-menu-link .icon::before {
+  opacity: 0.3;
+}
+
+.header-menu-link:active {
+  background-color: #161d29;
+  opacity: 0.6;
+}
+
+.checkout {
+  background-color: #63a63e;
+}
+
+.checkout:hover {
+  background-color: #5fbb2d;
+}
+
+.checkout:active {
+  opacity: 0.5;
+}
+
+.header-info {
+  padding-top: 46px;
+  padding-bottom: 44px;
+}
+
+.navigation-list {
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+}
+
+.navigation-item {
+  flex-grow: 1;
+}
+
+.navigation-item-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
+  padding: 0 31px;
+
+  font-size: 17px;
+  line-height: 1;
+  font-family: "Cuprum", sans-serif;
+  color: #ffffff;
+
+  background-color: #32425c;
+  box-shadow: inset 0px -5px 0 0 #293449;
+}
+
+.navigation-item-link:hover {
+  background-color: #293449;
+}
+
+.navigation-item-link:active {
+  background-color: #1d2739;
+  box-shadow: none;
+}
+
+/* Main */
+.main-wrapper {
+  padding-top: 59px;
+}
+
+.services-wrapper {
+  background-color: #f4f7f9;
+}
+
+.footer-wrapper {
+  background-color: #32425c;
+}
+
+.footer-info {
+  background-color: #293449;
+
+}
+
+/* Modal */
+.modal {
+  display: none;
 }
