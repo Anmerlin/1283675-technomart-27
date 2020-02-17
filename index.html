@@ -15,9 +15,13 @@
         <li><a class="logo header-logo"><img src="img/logo.svg" width="109" height="19" alt="Техномарт"></a></li>
         <li>
           <form class="header-search-form">
-              <input class="search-field" type="search" id="search" name="q" placeholder="Поиск:">
-              <label class="icon-search" for="search"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17"><path fill="#ffffff" d="M17 15.586l-3.542-3.542A7.465 7.465 0 0 0 15 7.5 7.5 7.5 0 1 0 7.5 15c1.71 0 3.282-.579 4.544-1.542L15.586 17 17 15.586zM2 7.5C2 4.467 4.467 2 7.5 2 10.532 2 13 4.467 13 7.5c0 3.032-2.468 5.5-5.5 5.5A5.506 5.506 0 0 1 2 7.5z"/></svg>
-              </label>
+            <input class="search-field" type="search" id="search" name="q" placeholder="Поиск:">
+            <label class="icon-search" for="search"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                viewBox="0 0 17 17" fill="#ffffff">
+                <path
+                  d="M17 15.586l-3.542-3.542A7.465 7.465 0 0 0 15 7.5 7.5 7.5 0 1 0 7.5 15c1.71 0 3.282-.579 4.544-1.542L15.586 17 17 15.586zM2 7.5C2 4.467 4.467 2 7.5 2 10.532 2 13 4.467 13 7.5c0 3.032-2.468 5.5-5.5 5.5A5.506 5.506 0 0 1 2 7.5z" />
+              </svg>
+            </label>
           </form>
         </li>
         <li><a class="header-menu-link icon icon-bookmark" href="">Закладки: <span>0</span></a></li>
@@ -27,13 +31,20 @@
     </div>
     <div class="header-info container">
       <p class="slogan">Интернет-магазин строительных материалов и инструментов для ремонта</p>
-      <div>
+      <div class="header-contacts">
         <a class="header-phone icon icon-phone" href="tel:+78125550555">+7 (812) 555-05-55</a>
         <p class="header-address">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
       </div>
-      <p>
-        <a class="header-info-link icon icon-auth" href="">Войти</a>
-        <a class="header-info-link" href="">Регистрация</a>
+      <p class="header-info-link-wrapper">
+        <a class="header-info-link icon-auth" href="">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17" fill="#c5c5c5">
+            <path d="M14.875 8.5L6 0v6H0v5h6v6z" />
+            <path
+              d="M16.986 15.01h-5.027V17h5.027c2.178 0 3.004-1.81 3.029-3.026V3.028C19.99 1.811 19.164 0 16.986 0h-5.027v1.99h5.027c.839 0 .992.681 1.01 1.057v10.904c-.017.376-.171 1.059-1.01 1.059z" />
+          </svg>
+          <span>Войти</span>
+        </a>
+        <a class="header-info-link link-registration" href="">Регистрация</a>
       </p>
     </div>
     <nav class="header-navigation container">
@@ -51,7 +62,6 @@
   <main class="main-wrapper">
     <div class="tizers-list container">
       <div class="tizers-item tizer-materials sticky-new">
-        <!-- Здесь и далее предполагаю, что иконки тизеров будут бэкграундом -->
         <h3 class="tizer-title">Материалы</h3>
         <a class="tizer-link" href="">На любой вкус</a>
       </div>
@@ -102,9 +112,9 @@
       </div>
     </div>
     <section class="container">
-      <div>
-        <h2 class="section-title">Популярные товары:</h2>
-        <a class="button button-red" href="">Все популярные товары</a>
+      <div class="popular-wrapper">
+        <h2 class="popular-title">Популярные товары:</h2>
+        <a class="button button-section" href="">Все популярные товары</a>
       </div>
       <ul class="products-list">
         <li class="products-item">
@@ -149,9 +159,9 @@
       </ul>
     </section>
     <section class="container">
-      <div>
-        <h2 class="section-title">Популярные производители:</h2>
-        <a class="button button-red" href="">Все производители</a>
+      <div class="popular-wrapper">
+        <h2 class="popular-title">Популярные производители:</h2>
+        <a class="button button-section" href="">Все производители</a>
       </div>
       <ul class="manufacturers-list">
         <li class="manufacturers-item">
@@ -164,10 +174,12 @@
           <a class="manufacturers-item-link" href=""><img src="img/dewalt.jpg" width="146" height="44" alt="Dewalt"></a>
         </li>
         <li class="manufacturers-item">
-          <a class="manufacturers-item-link" href=""><img src="img/interskol.jpg" width="200" height="88" alt="Интерскол"></a>
+          <a class="manufacturers-item-link" href=""><img src="img/interskol.jpg" width="200" height="88"
+              alt="Интерскол"></a>
         </li>
         <li class="manufacturers-item">
-          <a class="manufacturers-item-link" href=""><img src="img/hitachi.jpg" width="169" height="31" alt="Hitachi"></a>
+          <a class="manufacturers-item-link" href=""><img src="img/hitachi.jpg" width="169" height="31"
+              alt="Hitachi"></a>
         </li>
         <li class="manufacturers-item">
           <a class="manufacturers-item-link" href=""><img src="img/lg.jpg" width="121" height="73" alt="LG"></a>
@@ -244,7 +256,7 @@
   </div>
   <footer class="footer-wrapper">
     <div class="container">
-      <div>
+      <div class="footer-navigation">
         <a class="logo footer-logo"><img src="img/logo.svg" width="109" height="19" alt="Техномарт"></a>
         <ul class="navigation-list">
           <li class="navigation-item"><a class="navigation-item-link" href="">Компания</a></li>
@@ -254,7 +266,7 @@
           <li class="navigation-item"><a class="navigation-item-link" href="">Контакты</a></li>
         </ul>
       </div>
-      <div>
+      <div class="footer-subnavigation">
         <p class="footer-contacts">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8<br>
           <a href="tel:+78125550555">+7 (812) 555-05-55</a>
         </p>
