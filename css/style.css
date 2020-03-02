@@ -1419,11 +1419,56 @@ img {
 
 .modal-feedback {
   max-width: 620px;
-  padding: 55px 80px 37px;
 
   border-top: 7px solid #ff5257;
 }
 
 .modal-basket {
   display: none;
+}
+
+.form-feedback {
+  padding: 55px 80px 37px;
+}
+
+.form-row {
+  display: flex;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 13px;
+
+  font-size: 18px;
+  line-height: 1;
+  font-family: " Cuprum", sans-serif;
+  color: #000000;
+}
+
+.form-field,
+.form-textarea {
+  padding: 0 16px;
+
+  border-radius: 4px;
+  border: solid 2px #dee3e4;
+  background-color: #ffffff;
+}
+
+.form-field {
+  width: 220px;
+  height: 38px;
+}
+
+.form-textarea {
+  width: 460px;
+  height: 114px;
+  padding-top: 13px;
+
+  resize: none;
+}
+
+.buttons-wrapper {
+  padding: 37px 80px;
+
+  background-color: #f4f4f4;
 }
