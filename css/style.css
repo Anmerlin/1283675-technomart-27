@@ -184,6 +184,7 @@ img {
 .button-section:active,
 .button-section:focus {
   background-color: #ba2732;
+  outline: none;
 }
 
 .button-tizer,
@@ -208,6 +209,22 @@ img {
 
 .button-write {
   width: 100%;
+}
+
+.button-submit {
+  max-width: 460px;
+  width: 100%;
+}
+
+.button-modal {
+  width: 220px;
+  margin-right: 20px;
+}
+
+.button-modal-buy {
+  color: #000000;
+
+  background-color: #ffffff;
 }
 
 .button-buy,
@@ -1384,8 +1401,9 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 10;
 
-  /* display: none; */
+  display: none;
   background-color: #ffffff;
   box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.75);
 }
@@ -1414,17 +1432,41 @@ img {
 
 .modal-map {
   max-width: 940px;
-  display: none;
 }
 
-.modal-feedback {
+.modal-feedback,
+.modal-basket {
   max-width: 620px;
 
   border-top: 7px solid #ff5257;
 }
 
-.modal-basket {
-  display: none;
+.modal-title {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 55px 80px 49px;
+
+  font-family: "Cuprum", sans-serif;
+  font-size: 30px;
+  font-weight: normal;
+  line-height: 1;
+  color: #000000;
+}
+
+.modal-title::before {
+  display: inline-block;
+  width: 66px;
+  height: 66px;
+  margin-right: 32px;
+
+  border-radius: 50%;
+  background-color: #63a63e;
+  background-image: url(../img/icon-mark.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+
+  content: "";
 }
 
 .form-feedback {
@@ -1433,6 +1475,8 @@ img {
 
 .form-row {
   display: flex;
+  justify-content: space-between;
+  margin-bottom: 22px;
 }
 
 .form-label {
@@ -1454,6 +1498,17 @@ img {
   background-color: #ffffff;
 }
 
+.form-field:hover,
+.form-textarea:hover {
+  border-color: #b5b5b5;
+}
+
+.form-field:focus,
+.form-textarea:focus {
+  border-color: #ee3643;
+  outline: none;
+}
+
 .form-field {
   width: 220px;
   height: 38px;
@@ -1468,7 +1523,9 @@ img {
 }
 
 .buttons-wrapper {
+  display: flex;
+  justify-content: space-between;
   padding: 37px 80px;
 
-  background-color: #f4f4f4;
+  background-color: #f1f1f1;
 }
