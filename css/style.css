@@ -1430,6 +1430,10 @@ img {
   opacity: 0.5;
 }
 
+.modal-show {
+  display: block;
+}
+
 .modal-map {
   max-width: 940px;
 }
