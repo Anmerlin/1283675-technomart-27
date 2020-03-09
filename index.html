@@ -74,12 +74,12 @@
         <a class="tizer-link" href="">Для стройки</a>
       </div>
       <div class="tizers-slider-wrapper">
+        <button class="slider-arrow arrow-prev" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="40" viewBox="0 0 22 40" fill="#FFF">
+            <path d="M19.83-.035l2.089 2.099L4.13 19.947l17.847 17.939-2.09 2.099L-.048 19.947z" /></svg>
+          <span>Назад</span>
+        </button>
         <div class="tizers-slider">
-          <button class="slider-arrow arrow-prev" type="button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="40" viewBox="0 0 22 40" fill="#FFF">
-              <path d="M19.83-.035l2.089 2.099L4.13 19.947l17.847 17.939-2.09 2.099L-.048 19.947z" /></svg>
-            <span>Назад</span>
-          </button>
           <div class="tizers-slide">
             <img src="img/slide1.jpg" width="620" height="266" alt="Дрели">
             <div class="tizers-slide-content">
@@ -100,10 +100,10 @@
             <path d="M19.83-.035l2.089 2.099L4.13 19.947l17.847 17.939-2.09 2.099L-.048 19.947z" /></svg>
           <span>Вперед</span>
         </button>
-        <ul class="slider-pagination">
-          <li><button class="slider-dot dot-active" type="button">1</button></li>
-          <li><button class="slider-dot" type="button">2</button></li>
-        </ul>
+        <div class="slider-pagination">
+          <button class="slider-dot dot-active" type="button">1</button></li>
+          <button class="slider-dot" type="button">2</button>
+        </div>
         <a class="button button-section button-tizer" href="catalog.html">Открыть каталог</a>
       </div>
       <div class="tizers-block">
@@ -205,14 +205,14 @@
         <p class="section-desc">Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.</p>
         <div class="services-slider">
           <div class="services-slider-control">
-            <input class="visually-hidden" type="radio" name="services" id="delivery" checked>
+            <input class="visually-hidden" type="radio" name="services" id="delivery" data-control-name="delivery" checked>
             <label class="slide-control-button" for="delivery">Доставка</label>
-            <input class="visually-hidden" type="radio" name="services" id="warranty">
+            <input class="visually-hidden" type="radio" name="services" id="warranty" data-control-name="warranty" >
             <label class="slide-control-button" for="warranty">Гарантия</label>
-            <input class="visually-hidden" type="radio" name="services" id="credit">
+            <input class="visually-hidden" type="radio" name="services" id="credit" data-control-name="credit" >
             <label class="slide-control-button" for="credit">Кредит</label>
           </div>
-          <div class="services-slide slide-delivery">
+          <div class="services-slide slide-delivery active">
             <h3 class="services-slide-title">Доставка</h3>
             <p class="services-slide-desc">Мы с удовольствием доставим ваш товар прямо<br>
               к вашему подъезду совершенно бесплатно!</p>
@@ -313,6 +313,7 @@
   </footer>
   <section class="modal modal-map">
     <h2 class="visually-hidden">Местоположение офиса</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6037999040354!2d30.322010416394033!3d59.938716271971415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca5ba729%3A0xea9c53d4493c879f!2sBolshaya+Konyushennaya+ul.%2C+19%2C+Sankt-Peterburg%2C+Russia%2C+191186!5e0!3m2!1sen!2s!4v1441888483426" width="940" height="446" allowfullscreen></iframe>
     <img src="img/map-modal.jpg" width="940" height="446" alt="Местоположение офиса">
     <button class="modal-close" type="button">Закрыть</button>
   </section>

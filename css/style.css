@@ -1,8 +1,8 @@
 /* Fonts */
 @font-face {
   font-family: "PTSans";
-  src: url("/fonts/ptsans.woff2") format("woff2"),
-    url("/fonts/ptsans.woff") format("woff");
+  src: url("../fonts/ptsans.woff2") format("woff2"),
+    url("fonts/ptsans.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -10,8 +10,8 @@
 
 @font-face {
   font-family: "PTSans";
-  src: url("/fonts/ptsansbold.woff2") format("woff2"),
-    url("/fonts/ptsansbold.woff") format("woff");
+  src: url("../fonts/ptsansbold.woff2") format("woff2"),
+    url("fonts/ptsansbold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -19,7 +19,7 @@
 
 @font-face {
   font-family: "Cuprum";
-  src: url("/fonts/cuprum.woff2") format("woff2"),
+  src: url("../fonts/cuprum.woff2") format("woff2"),
     url("/fonts/cuprum.woff") format("woff");
   font-weight: normal;
   font-style: normal;
@@ -28,8 +28,8 @@
 
 @font-face {
   font-family: "Cuprum";
-  src: url("/fonts/cuprumbold.woff2") format("woff2"),
-    url("/fonts/cuprumbold.woff") format("woff");
+  src: url("../fonts/cuprumbold.woff2") format("woff2"),
+    url("../fonts/cuprumbold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -37,8 +37,8 @@
 
 @font-face {
   font-family: "Cuprum";
-  src: url("/fonts/cuprumitalic.woff2") format("woff2"),
-    url("/fonts/cuprumitalic.woff") format("woff");
+  src: url("../fonts/cuprumitalic.woff2") format("woff2"),
+    url("../fonts/cuprumitalic.woff") format("woff");
   font-weight: normal;
   font-style: italic;
   font-display: swap;
@@ -46,8 +46,8 @@
 
 @font-face {
   font-family: "Cuprum";
-  src: url("/fonts/cuprumbolditalic.woff2") format("woff2"),
-    url("/fonts/cuprumbolditalic.woff") format("woff");
+  src: url("../fonts/cuprumbolditalic.woff2") format("woff2"),
+    url("../fonts/cuprumbolditalic.woff") format("woff");
   font-weight: bold;
   font-style: italic;
   font-display: swap;
@@ -72,6 +72,8 @@ body {
   line-height: 1;
   font-weight: 400;
   font-family: "PTSans", sans-serif;
+
+  overflow-x: hidden;
 }
 
 p {
@@ -96,8 +98,9 @@ img {
   padding: 0;
   margin: -1px;
 
-  overflow: hidden;
   border: 0;
+
+  overflow: hidden;
   clip: rect(0, 0, 0, 0);
 }
 
@@ -107,9 +110,9 @@ img {
   font-family: "Cuprum", sans-serif;
   font-size: 30px;
   line-height: 1;
-  color: #000000;
-  text-transform: uppercase;
   letter-spacing: -0.9px;
+  text-transform: uppercase;
+  color: #000000;
 }
 
 .section-desc {
@@ -302,6 +305,7 @@ img {
   position: absolute;
   top: 5px;
   right: -25px;
+  z-index: 1;
 
   display: flex;
   align-items: center;
@@ -309,11 +313,12 @@ img {
   width: 90px;
   height: 28px;
 
-  color: #ffffff;
   text-align: center;
+  color: #ffffff;
+
+  background-color: #ff5357;
 
   transform: rotate(45deg);
-  background-color: #ff5357;
 }
 
 /* Grid */
@@ -811,14 +816,11 @@ img {
   list-style: none;
 }
 
-.slider-pagination li {
-  margin: 0 5px;
-}
-
 .slider-dot {
   width: 10px;
   height: 10px;
   padding: 0;
+  margin: 0 5px;
 
   font-size: 0;
   border-radius: 50%;
@@ -1087,7 +1089,6 @@ img {
 }
 
 .slide-control-button:hover {
-  /* box-shadow: 0 0.5px 0 0 #293449, inset 0 0.5px 0 0 #405069; */
   background-color: #293449;
 }
 
@@ -1097,23 +1098,23 @@ img {
   flex-grow: 1;
 }
 
-.services-slide.slide-delivery {
+.services-slide.active {
   display: block;
+}
 
+.services-slide.slide-delivery {
   background-image: url(../img/delivery.png);
   background-repeat: no-repeat;
   background-position: 100% 100%;
 }
 
 .services-slide.slide-warranty {
-  /* display: block; */
   background-image: url(../img/warranty.png);
   background-repeat: no-repeat;
   background-position: 100% 100%;
 }
 
 .services-slide.slide-credit {
-  /* display: block; */
   background-image: url(../img/credit.png);
   background-repeat: no-repeat;
   background-position: 100% 100%;
@@ -1396,6 +1397,16 @@ img {
 
 
 /* Modal */
+@keyframes bounce {
+  0% {
+    transform: translate(-50%, -100%);
+  }
+
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+
 .modal {
   position: fixed;
   top: 50%;
@@ -1412,6 +1423,7 @@ img {
   position: absolute;
   top: 9px;
   right: 9px;
+  z-index: 3;
 
   width: 21px;
   height: 21px;
@@ -1432,10 +1444,26 @@ img {
 
 .modal-show {
   display: block;
+
+  animation: bounce 0.6s;
 }
 
 .modal-map {
   max-width: 940px;
+}
+
+.modal-map img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.modal-map iframe {
+  position: relative;
+  z-index: 2;
+
+  border: none;
 }
 
 .modal-feedback,

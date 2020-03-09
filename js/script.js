@@ -1,3 +1,82 @@
+var slideBtnNext = document.querySelector(".tizers-slider-wrapper .arrow-next");
+var slideBtnPrev = document.querySelector(".tizers-slider-wrapper .arrow-prev");
+var slideDot = document.querySelectorAll(".slider-pagination .slider-dot");
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+slideBtnNext.addEventListener("click", function (evt) {
+  evt.preventDefault();
+  nextSlide()
+});
+
+slideBtnPrev.addEventListener("click", function (evt) {
+  evt.preventDefault();
+  prevSlide()
+});
+
+slideDot.forEach(function (dot) {
+  dot.addEventListener("click", function (evt) {
+    evt.preventDefault();
+    currentSlide(+dot.innerHTML);
+  });
+});
+
+function nextSlide() {
+  showSlides(slideIndex += 1);
+}
+
+function prevSlide() {
+  showSlides(slideIndex -= 1);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.querySelectorAll(".tizers-slide");
+  var dots = document.querySelectorAll(".slider-pagination .slider-dot");
+
+  if (n > slides.length) {
+    slideIndex = 1
+  }
+  if (n < 1) {
+    slideIndex = slides.length
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" dot-active", "");
+  }
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " dot-active";
+}
+
+
+var slideBtnControl = document.querySelectorAll(".services-slider-control input");
+var slideBlock = document.querySelectorAll(".services-slide");
+
+slideBtnControl.forEach(function (btn) {
+  btn.addEventListener("change", function (evt) {
+    evt.preventDefault();
+    var dataControlName = btn.dataset.controlName;
+    serviceContent(dataControlName);
+  });
+});
+
+function serviceContent(name) {
+  slideBlock.forEach(function (block) {
+    if (block.classList.contains("slide-" + name)) {
+      block.classList.add("active");
+    } else {
+      block.classList.remove("active");
+    }
+  });
+}
+
 var mapLink = document.querySelector(".map-link");
 var feedbackBtn = document.querySelector(".button-write");
 var basketBtn = document.querySelectorAll(".button-buy");
