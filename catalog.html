@@ -93,14 +93,12 @@
         <form class="filter-form" method="get" action="https://echo.htmlacademy.ru">
           <fieldset>
             <legend>Цена:</legend>
-            <div class="filter-price-slider">
-              <!-- управление -->
-              <div>
-                <!-- шкала -->
-                <div></div> <!-- выбранная полоска -->
+            <div class="filter-price-range">
+              <div class="price-scale">
+                <div class="price-bar"></div>
               </div>
-              <span class=""></span> <!-- левый ползунок -->
-              <span class=""></span> <!-- правый ползунок -->
+              <span class="price-btn price-btn-min"></span>
+              <span class="price-btn price-btn-max"></span>
             </div>
             <div class="filter-price-inputs">
               <input type="number" name="minprice" min="0" max="30000" step="500" value="0">
