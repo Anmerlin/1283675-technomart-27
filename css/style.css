@@ -300,6 +300,27 @@ img {
   outline: none;
 }
 
+.button-filter {
+  width: 140px;
+  height: 38px;
+
+  font-size: 13px;
+  line-height: 1.38;
+  font-family: "PTSans", sans-serif;
+  color: #000000;
+  text-transform: uppercase;
+
+  border-radius: 4px;
+  border: solid 1px #e5e5e5;
+  background-color: #ffffff;
+}
+
+.button-filter:hover,
+.button-filter:active {
+  border-color: #b5b5b5;
+  outline: none;
+}
+
 .sticky-new::before {
   content: "new";
   position: absolute;
@@ -1519,7 +1540,7 @@ img {
 
 .main-title {
   padding: 32px 30px 34px;
-  margin: 0;
+  margin: 0 0 20px;
 
   font-family: "Cuprum", sans-serif;
   font-size: 30px;
@@ -1530,8 +1551,265 @@ img {
 }
 
 .catalog-wrapper {
+  display: flex;
   padding-bottom: 30px;
 }
+
+.catalog-filter {
+  flex: 0 0 220px;
+  margin-right: 20px;
+}
+
+.filter-title,
+.sort-title {
+  font-size: 13px;
+  line-height: 1.38;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.filter-title {
+  display: flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 0 18px;
+  margin: 0;
+
+  background-color: #f7f3ec;
+}
+
+.filter-form {
+  padding-top: 20px;
+}
+
+.filter-form fieldset {
+  padding: 25px 0;
+
+  border: none;
+}
+
+.filter-form fieldset:first-of-type {
+  padding-top: 0;
+}
+
+.filter-form legend {
+  width: 100%;
+  padding: 25px 0 20px;
+
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 1.76;
+  color: #000000;
+  text-transform: uppercase;
+
+  border-top: 1px solid #e5e5e5;
+}
+
+.filter-form fieldset:first-of-type legend {
+  padding-top: 0;
+
+  border-top: none;
+}
+
+.filter-price-slider {
+  display: flex;
+  width: 100%;
+  height: 80px;
+  padding: 0 20px;
+  margin-bottom: 9px;
+
+  background-color: #f7f3ec;
+}
+
+.filter-price-inputs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filter-price-inputs input {
+  width: 95px;
+  height: 38px;
+  padding: 0 5px;
+
+  font-size: 17px;
+  line-height: 1.06;
+  color: #000000;
+  text-align: center;
+
+  border: none;
+  background-color: #f7f3ec;
+}
+
+.filter-price-inputs span {
+  font-size: 16px;
+  line-height: 1.13;
+  text-align: center;
+  color: #444444;
+}
+
+.filter-form ul {
+  padding: 0;
+  margin: 0;
+
+  list-style: none;
+}
+
+.filter-form input[type="checkbox"]+label:before {
+  display: inline-block;
+  width: 27px;
+  height: 23px;
+  margin-right: 12px;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='23' height='23' viewBox='0 0 23 23' fill='%23c5c5c5'%3E%3Cpath d='M20 2c.542 0 1 .458 1 1v17c0 .542-.458 1-1 1H3c-.542 0-1-.458-1-1V3c0-.542.458-1 1-1h17m0-2H3C1.35 0 0 1.35 0 3v17c0 1.65 1.35 3 3 3h17c1.65 0 3-1.35 3-3V3c0-1.65-1.35-3-3-3z'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+
+  content: "";
+}
+
+.filter-form input[type="checkbox"]+label:hover:before,
+.filter-form input[type="checkbox"]:focus+label:before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='23' height='23' viewBox='0 0 23 23' fill='%23b5b5b5'%3E%3Cpath d='M20 2c.542 0 1 .458 1 1v17c0 .542-.458 1-1 1H3c-.542 0-1-.458-1-1V3c0-.542.458-1 1-1h17m0-2H3C1.35 0 0 1.35 0 3v17c0 1.65 1.35 3 3 3h17c1.65 0 3-1.35 3-3V3c0-1.65-1.35-3-3-3z'/%3E%3C/svg%3E%0A");
+}
+
+.filter-form input[type="checkbox"]:checked+label:before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='27' height='23' viewBox='0 0 27 23' fill='%23c5c5c5'%3E%3Cpath d='M7.285 7.486l-2.829 2.829 7.783 7.783L26.171 4.166l-2.828-2.829-11.104 11.102z'/%3E%3Cpath d='M21 20c0 .542-.458 1-1 1H3c-.542 0-1-.458-1-1V3c0-.542.458-1 1-1h16.908L21.493.415A2.96 2.96 0 0 0 20 0H3C1.35 0 0 1.35 0 3v17c0 1.65 1.35 3 3 3h17c1.65 0 3-1.35 3-3v-9.829l-2 2V20z'/%3E%3C/svg%3E%0A");
+}
+
+.filter-form input[type="checkbox"]:checked+label:hover:before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='27' height='23' viewBox='0 0 27 23' fill='%23b5b5b5'%3E%3Cpath d='M7.285 7.486l-2.829 2.829 7.783 7.783L26.171 4.166l-2.828-2.829-11.104 11.102z'/%3E%3Cpath d='M21 20c0 .542-.458 1-1 1H3c-.542 0-1-.458-1-1V3c0-.542.458-1 1-1h16.908L21.493.415A2.96 2.96 0 0 0 20 0H3C1.35 0 0 1.35 0 3v17c0 1.65 1.35 3 3 3h17c1.65 0 3-1.35 3-3v-9.829l-2 2V20z'/%3E%3C/svg%3E%0A");
+}
+
+.filter-form input[type="radio"]+label:before {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 25 25' fill='%23c5c5c5'%3E%3Cpath d='M12.5 4c4.687 0 8.5 3.813 8.5 8.5 0 4.687-3.813 8.5-8.5 8.5C7.813 21 4 17.187 4 12.5 4 7.813 7.813 4 12.5 4m0-4C5.597 0 0 5.597 0 12.5S5.597 25 12.5 25 25 19.403 25 12.5 19.403 0 12.5 0z'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+
+  content: "";
+}
+
+.filter-form input[type="radio"]+label:hover:before,
+.filter-form input[type="radio"]:focus+label:before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 25 25' fill='%23b5b5b5'%3E%3Cpath d='M12.5 4c4.687 0 8.5 3.813 8.5 8.5 0 4.687-3.813 8.5-8.5 8.5C7.813 21 4 17.187 4 12.5 4 7.813 7.813 4 12.5 4m0-4C5.597 0 0 5.597 0 12.5S5.597 25 12.5 25 25 19.403 25 12.5 19.403 0 12.5 0z'/%3E%3C/svg%3E%0A");
+}
+
+.filter-form input[type="radio"]:checked+label:before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 25 25' fill='%23c5c5c5'%3E%3Cpath d='M12.5 4c4.687 0 8.5 3.813 8.5 8.5 0 4.687-3.813 8.5-8.5 8.5C7.813 21 4 17.187 4 12.5 4 7.813 7.813 4 12.5 4m0-4C5.597 0 0 5.597 0 12.5S5.597 25 12.5 25 25 19.403 25 12.5 19.403 0 12.5 0z'/%3E%3Ccircle cx='12.5' cy='12.5' r='4.5'/%3E%3C/svg%3E%0A");
+}
+
+.filter-form input[type="radio"]:checked+label:hover:before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 25 25' fill='%23b5b5b5'%3E%3Cpath d='M12.5 4c4.687 0 8.5 3.813 8.5 8.5 0 4.687-3.813 8.5-8.5 8.5C7.813 21 4 17.187 4 12.5 4 7.813 7.813 4 12.5 4m0-4C5.597 0 0 5.597 0 12.5S5.597 25 12.5 25 25 19.403 25 12.5 19.403 0 12.5 0z'/%3E%3Ccircle cx='12.5' cy='12.5' r='4.5'/%3E%3C/svg%3E%0A");
+}
+
+.filter-form input[type="checkbox"]:disabled+label,
+.filter-form input[type="radio"]:disabled+label {
+  color: rgba(0, 0, 0, 0.4);
+  cursor: default;
+}
+
+.filter-form input[type="checkbox"]:disabled+label:before,
+.filter-form input[type="radio"]:disabled+label:before {
+  opacity: 0.3;
+}
+
+.filter-form label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 17px;
+
+  font-size: 15px;
+  line-height: 1.33;
+  color: #000000;
+  text-transform: uppercase;
+
+  cursor: pointer;
+}
+
+.filter-form label:hover:before {
+  border-color: #b5b5b5;
+}
+
+.catalog-sort {
+  display: flex;
+  align-items: center;
+  min-height: 38px;
+  padding-left: 19px;
+  padding-right: 17px;
+
+  background-color: #f7f3ec;
+}
+
+.sort-select {
+  margin-left: auto;
+}
+
+.sort-select a:last-child {
+  margin-left: 21px;
+}
+
+.sort-select a:nth-last-child(2) {
+  margin-left: 46px;
+}
+
+.sort-select a:nth-last-child(3) {
+  margin-left: 65px;
+}
+
+.sort-select a:nth-last-child(4) {
+  margin-left: 71px;
+}
+
+.sort-select-type {
+  font-size: 13px;
+  line-height: 1.38;
+  color: rgba(0, 0, 0, 0.3);
+  ;
+  text-transform: uppercase;
+}
+
+.sort-select-type:hover {
+  color: #000000;
+}
+
+.sort-select-type:active,
+.sort-select-type.active-type {
+  color: #ee3643;
+}
+
+.sort-select-type span {
+  border-bottom: 1px dotted #ee3643;
+}
+
+.sort-select-type:hover span {
+  border-bottom-style: solid;
+}
+
+.sort-select-type:active span,
+.sort-select-type.active-type span {
+  border-block-end-color: transparent;
+}
+
+.sort-select-direction:hover svg {
+  fill: #231f20;
+}
+
+.sort-select-direction:active svg,
+.sort-select-direction.active-direction svg {
+  fill: #ee3643;
+}
+
+.catalog-list .products-item:not(:nth-child(3n)) {
+  margin-right: 20px;
+}
+
+.catalog-list .products-item:nth-child(3n) {
+  margin-right: 0;
+}
+
 .page-navigation {
   display: flex;
   padding: 0;
@@ -1573,6 +1851,7 @@ img {
 .page-navigation-link:not(.active):hover {
   border-color: #bdc6ca;
 }
+
 .page-navigation-link:not(.active):active {
   border-color: #ee3643;
 }

@@ -88,47 +88,47 @@
       <h1 class="main-title">Перфораторы</h1>
     </div>
     <div class="catalog-wrapper container">
-      <section>
-        <h2>Фильтр:</h2>
-        <form>
+      <section class="catalog-filter">
+        <h2 class="filter-title">Фильтр:</h2>
+        <form class="filter-form" method="get" action="https://echo.htmlacademy.ru">
           <fieldset>
             <legend>Цена:</legend>
-            <div>
+            <div class="filter-price-slider">
               <!-- управление -->
               <div>
                 <!-- шкала -->
                 <div></div> <!-- выбранная полоска -->
               </div>
-              <span></span> <!-- левый ползунок -->
-              <span></span> <!-- правый ползунок -->
+              <span class=""></span> <!-- левый ползунок -->
+              <span class=""></span> <!-- правый ползунок -->
             </div>
-            <div>
-              <input type="number" min="0" max="30000" step="500" value="0">
-              <span>-</span>
-              <input type="number" min="0" max="30000" step="500" value="30000">
+            <div class="filter-price-inputs">
+              <input type="number" name="minprice" min="0" max="30000" step="500" value="0">
+              <span>—</span>
+              <input type="number" name="maxprice" min="0" max="30000" step="500" value="30000">
             </div>
           </fieldset>
           <fieldset>
             <legend>Производители:</legend>
-            <ul>
+            <ul class="">
               <li>
-                <input type="checkbox" name="manufacturers" id="bosh" class="visually-hidden" checked>
+                <input class="visually-hidden" type="checkbox" name="manufacturers" id="bosh" value="bosh" checked>
                 <label for="bosh">Bosh</label>
               </li>
               <li>
-                <input type="checkbox" name="manufacturers" id="interskol" class="visually-hidden">
+                <input class="visually-hidden" type="checkbox" name="manufacturers" id="interskol" value="interskol">
                 <label for="interskol">Интерскол</label>
               </li>
               <li>
-                <input type="checkbox" name="manufacturers" id="makita" class="visually-hidden" checked>
+                <input class="visually-hidden" type="checkbox" name="manufacturers" id="makita" value="makita" checked>
                 <label for="makita">Makita</label>
               </li>
               <li>
-                <input type="checkbox" name="manufacturers" id="dewalt" class="visually-hidden">
+                <input class="visually-hidden" type="checkbox" name="manufacturers" id="dewalt" value="dewalt">
                 <label for="dewalt">Dewalt</label>
               </li>
               <li>
-                <input type="checkbox" name="manufacturers" id="hitachi" class="visually-hidden">
+                <input class="visually-hidden" type="checkbox" name="manufacturers" id="hitachi" value="hitachi">
                 <label for="hitachi">Hitachi</label>
               </li>
             </ul>
@@ -137,30 +137,30 @@
             <legend>Питание</legend>
             <ul>
               <li>
-                <input type="radio" name="power" id="accumulator" class="visually-hidden">
+                <input class="visually-hidden" type="radio" name="power" id="accumulator" value="accumulator" checked>
                 <label for="accumulator">Аккамуляторные</label>
               </li>
               <li>
-                <input type="radio" name="power" id="mains" class="visually-hidden">
+                <input class="visually-hidden" type="radio" name="power" id="mains" value="mains">
                 <label for="mains">Сетевые</label>
               </li>
             </ul>
           </fieldset>
-          <button type="submit">Показать</button>
+          <button class="button button-filter" type="submit">Показать</button>
         </form>
       </section>
       <div>
-        <section>
-          <h2>Сортировка</h2>
-          <div>
-            <a href="">По цене</a>
-            <a href="">По типу</a>
-            <a href="">По функционалу</a>
-            <a href=""></a> <!-- asc -->
-            <a href=""></a> <!-- desc -->
+        <section class="catalog-sort">
+          <h2 class="sort-title">Сортировка</h2>
+          <div class="sort-select">
+            <a class="sort-select-type active-type" href=""><span>По цене</span></a>
+            <a class="sort-select-type" href=""><span>По типу</span></a>
+            <a class="sort-select-type" href=""><span>По функционалу</span></a>
+            <a class="sort-select-direction active-direction" href=""><svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="#c5c5c5"><path d="M5.5 10L0 0h11"/></svg></a> <!-- asc -->
+            <a class="sort-select-direction" href=""><svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="#c5c5c5"><path d="M5.5 0L0 10h11z"/></svg></a> <!-- desc -->
           </div>
         </section>
-        <ul class="products-list">
+        <ul class="products-list catalog-list">
           <li class="products-item">
             <img src="img/perforator1.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 3000">
             <div class="product-action">
