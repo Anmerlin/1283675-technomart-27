@@ -17,12 +17,12 @@ if (slides.length) {
     prevSlide()
   });
 
-  slideDot.forEach(function (dot) {
-    dot.addEventListener("click", function (evt) {
+  for (var i = 0; i < slideDot.length; i++) {
+    slideDot[i].addEventListener("click", function (evt) {
       evt.preventDefault();
-      currentSlide(+dot.innerHTML);
+      currentSlide(+this.innerHTML);
     });
-  });
+  }
 }
 
 function nextSlide() {
@@ -61,34 +61,35 @@ function showSlides(n) {
 var slideBtnControl = document.querySelectorAll(".services-slider-control input");
 var slideBlock = document.querySelectorAll(".services-slide");
 
-slideBtnControl.forEach(function (btn) {
-  btn.addEventListener("change", function (evt) {
+for (var i = 0; i < slideBtnControl.length; i++) {
+  slideBtnControl[i].addEventListener("change", function (evt) {
     evt.preventDefault();
-    var dataControlName = btn.dataset.controlName;
+    var dataControlName = this.dataset.controlName;
     serviceContent(dataControlName);
   });
-});
+};
 
 function serviceContent(name) {
-  slideBlock.forEach(function (block) {
-    if (block.classList.contains("slide-" + name)) {
-      block.classList.add("active");
+  for (var i = 0; i < slideBlock.length; i++) {
+    if (slideBlock[i].classList.contains("slide-" + name)) {
+      slideBlock[i].classList.add("active");
     } else {
-      block.classList.remove("active");
+      slideBlock[i].classList.remove("active");
     }
-  });
+  };
 }
 
 var mapLink = document.querySelector(".map-link");
 var feedbackBtn = document.querySelector(".button-write");
 var basketBtn = document.querySelectorAll(".button-buy");
+var continueBtn = document.querySelector(".button-modal-buy");
 
 var map = document.querySelector(".modal-map");
 var feedback = document.querySelector(".modal-feedback");
 var basket = document.querySelector(".modal-basket");
-var close = document.querySelectorAll(".modal-close");
+var closeBtn = document.querySelectorAll(".modal-close");
 
-if (feedback !== null && feedback.length) {
+if (feedback !== null) {
   var form = feedback.querySelector("form");
   var surname = feedback.querySelector("[name=surname]");
   var email = feedback.querySelector("[name=email]");
@@ -105,14 +106,15 @@ try {
 } catch (err) {
   isStorageSupport = false;
 }
-if (mapLink !== null && mapLink.length) {
+
+if (mapLink !== null) {
   mapLink.addEventListener("click", function (evt) {
     evt.preventDefault();
     map.classList.add("modal-show");
   });
 }
 
-if (feedbackBtn !== null && feedbackBtn.length) {
+if (feedbackBtn !== null) {
   feedbackBtn.addEventListener("click", function (evt) {
     evt.preventDefault();
     feedback.classList.add("modal-show");
@@ -127,25 +129,33 @@ if (feedbackBtn !== null && feedbackBtn.length) {
   });
 }
 
-basketBtn.forEach(function (item) {
-  item.addEventListener("click", function (evt) {
+for (var i = 0; i < basketBtn.length; i++) {
+  basketBtn[i].addEventListener("click", function (evt) {
     evt.preventDefault();
     basket.classList.add("modal-show");
   });
-});
+}
 
-close.forEach(function (item) {
-  item.addEventListener("click", function (evt) {
+for (var i = 0; i < closeBtn.length; i++) {
+  closeBtn[i].addEventListener("click", function (evt) {
     evt.preventDefault();
-    item.parentNode.classList.remove("modal-show");
+    this.parentNode.classList.remove("modal-show");
+    this.classList.remove("modal-error");
   });
+};
+
+continueBtn.addEventListener("click", function (evt) {
+  evt.preventDefault();
+  basket.classList.remove("modal-show");
 });
 
 if (form !== undefined && form.length) {
   form.addEventListener("submit", function (evt) {
     if (!surname.value || !email.value) {
       evt.preventDefault();
-      // error
+      feedback.classList.remove("modal-error");
+      feedback.offsetWidth = feedback.offsetWidth;
+      feedback.classList.add("modal-error");
     } else {
       if (isStorageSupport) {
         localStorage.setItem("surname", surname.value);
@@ -154,3 +164,13 @@ if (form !== undefined && form.length) {
     }
   });
 }
+
+window.addEventListener("keydown", function (evt) {
+  if (evt.keyCode === 27) {
+    evt.preventDefault();
+    if (feedback.classList.contains("modal-show")) {
+      feedback.classList.remove("modal-show");
+      feedback.classList.remove("modal-error");
+    }
+  }
+});
