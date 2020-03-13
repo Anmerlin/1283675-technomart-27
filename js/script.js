@@ -48,12 +48,12 @@ function showSlides(n) {
     slideIndex = slides.length
   }
   for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+    slides[i].className = slides[i].className.replace(" slide-show", "");
   }
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" dot-active", "");
   }
-  slides[slideIndex - 1].style.display = "block";
+  slides[slideIndex - 1].className += " slide-show";
   dots[slideIndex - 1].className += " dot-active";
 }
 
@@ -140,7 +140,7 @@ for (var i = 0; i < closeBtn.length; i++) {
   closeBtn[i].addEventListener("click", function (evt) {
     evt.preventDefault();
     this.parentNode.classList.remove("modal-show");
-    this.classList.remove("modal-error");
+    this.parentNode.classList.remove("modal-error");
   });
 };
 

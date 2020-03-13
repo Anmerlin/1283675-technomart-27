@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>HTML Academy: Техномарт</title>
-  <link href="css/normalize.css" rel="stylesheet">
+  <link href="css/normalize.min.css" rel="stylesheet">
   <link href="css/style.min.css" rel="stylesheet">
 </head>
 
@@ -21,6 +21,7 @@
                 <path
                   d="M17 15.586l-3.542-3.542A7.465 7.465 0 0 0 15 7.5 7.5 7.5 0 1 0 7.5 15c1.71 0 3.282-.579 4.544-1.542L15.586 17 17 15.586zM2 7.5C2 4.467 4.467 2 7.5 2 10.532 2 13 4.467 13 7.5c0 3.032-2.468 5.5-5.5 5.5A5.506 5.506 0 0 1 2 7.5z" />
               </svg>
+              <span class="visually-hidden">Поиск</span>
             </label>
           </form>
         </li>
@@ -87,7 +88,7 @@
               <p class="tizers-slide-desc outside-indent">Соседям на радость!</p>
             </div>
           </div>
-          <div class="tizers-slide" style="display: none;">
+          <div class="tizers-slide">
             <img src="img/slide2.jpg" width="620" height="266" alt="Перфораторы">
             <div class="tizers-slide-content">
               <h3 class="tizers-slide-title">Перфораторы</h3>
@@ -205,11 +206,12 @@
         <p class="section-desc outside-indent">Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.</p>
         <div class="services-slider">
           <div class="services-slider-control">
-            <input class="visually-hidden" type="radio" name="services" id="delivery" data-control-name="delivery" checked>
+            <input class="visually-hidden" type="radio" name="services" id="delivery" data-control-name="delivery"
+              checked>
             <label class="slide-control-button" for="delivery">Доставка</label>
-            <input class="visually-hidden" type="radio" name="services" id="warranty" data-control-name="warranty" >
+            <input class="visually-hidden" type="radio" name="services" id="warranty" data-control-name="warranty">
             <label class="slide-control-button" for="warranty">Гарантия</label>
-            <input class="visually-hidden" type="radio" name="services" id="credit" data-control-name="credit" >
+            <input class="visually-hidden" type="radio" name="services" id="credit" data-control-name="credit">
             <label class="slide-control-button" for="credit">Кредит</label>
           </div>
           <div class="services-slide slide-delivery active">
@@ -240,7 +242,8 @@
     <div class="section-container">
       <section class="section-about">
         <h2 class="section-title">Компания «Техномарт»</h2>
-        <p class="section-desc outside-indent">Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для ремонта и
+        <p class="section-desc outside-indent">Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для
+          ремонта и
           строительства не оставит
           равнодушными любителей сэкономить на гастарбайтерах.</p>
         <div class="about-desc">
@@ -278,7 +281,7 @@
         </ul>
       </div>
       <div class="footer-subnavigation">
-        <p class="footer-contacts outside-indent">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8<br>
+        <p class="footer-contacts outside-indent">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8
           <a href="tel:+78125550555">+7 (812) 555-05-55</a>
         </p>
         <ul class="navigation-list">
@@ -313,7 +316,9 @@
   </footer>
   <section class="modal modal-map">
     <h2 class="visually-hidden">Местоположение офиса</h2>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6037999040354!2d30.322010416394033!3d59.938716271971415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca5ba729%3A0xea9c53d4493c879f!2sBolshaya+Konyushennaya+ul.%2C+19%2C+Sankt-Peterburg%2C+Russia%2C+191186!5e0!3m2!1sen!2s!4v1441888483426" width="940" height="446" allowfullscreen></iframe>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6037999040354!2d30.322010416394033!3d59.938716271971415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca5ba729%3A0xea9c53d4493c879f!2sBolshaya+Konyushennaya+ul.%2C+19%2C+Sankt-Peterburg%2C+Russia%2C+191186!5e0!3m2!1sen!2s!4v1441888483426"
+      width="940" height="446" allowfullscreen></iframe>
     <img src="img/map-modal.jpg" width="940" height="446" alt="Местоположение офиса">
     <button class="modal-close" type="button">Закрыть</button>
   </section>
